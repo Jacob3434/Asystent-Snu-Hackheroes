@@ -1,0 +1,171 @@
+BoxLayout:
+    orientation:'vertical'
+
+    MDToolbar:
+        title: 'Asystent snu'
+
+    MDBottomNavigation:
+
+        MDBottomNavigationItem:
+            name: 'screen 1'
+            text: 'Dane'
+
+            MDLabel:
+                text_size: self.size
+                text: '[b] Dane: [/b]'
+                font_size: 24.
+                markup: True
+                halign: 'left'
+                valign: 'top'
+                size: self.texture_size
+                padding: (10, 10)
+
+            AnchorLayout:
+                anchor_y: "top"
+                padding: (30, 45)
+
+                MDLabel:
+                    text_size: self.size
+                    text: 'Imię:'
+                    font_size: 16
+                    halign: 'left'
+                    valign: 'top'
+                    size: self.texture_size
+
+                MDTextField:
+                    id: user_name
+                    size: (60, 20)
+                    helper_text: "Wpisz swoje imię"
+
+            AnchorLayout:
+                anchor_y: "top"
+                padding: (30, 90)
+
+                MDLabel:
+                    text_size: self.size
+                    text: 'Wiek:'
+                    font_size: 16
+                    halign: 'left'
+                    valign: 'top'
+                    size: self.texture_size
+
+                MDTextField:
+                    id: user_age
+                    size: (60, 20)
+                    helper_text: "Wpisz swój wiek"
+
+            AnchorLayout:
+                anchor_y: "top"
+                padding: (30, 145)
+                GridLayout:
+                    rows: 4
+                    anchor_y: "top"
+                    size_y: 30
+
+
+                    MDLabel:
+                        text_size: self.size
+                        text: 'Kobieta:'
+                        ont_size: 16 
+
+                    MDCheckbox: 
+                        id: user_female
+                        group: 'group'
+                        size_hint: None, None
+                        active: True
+                            
+                    MDLabel:
+                        text_size: self.size
+                        text: 'Mężczyzna:'
+                        font_size: 16 
+
+                    MDCheckbox: 
+                        id: user_male
+                        group: 'group'
+                        size_hint: None, None
+
+            AnchorLayout:
+                anchor_y: "bottom"
+                anchor_x: "right"
+                padding: (10,10)
+                
+                Button:
+                    id: update
+                    text: "AKTUALIZUJ"
+                    size: (100, 35)
+                    size_hint: None, None
+                    anchor_y: 'top'
+                    on_press: app.callback_update()
+
+
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            text: 'Analiza snu'
+
+            MDLabel:
+                text: '[b] Wpisz swoje dane z dzisiaj: [/b]'
+                text_size: self.size
+                halign: 'left'
+                valign: 'top'
+                markup: True
+                padding: (10,10)
+                font_size: 24
+
+            AnchorLayout:
+                anchor_y: "top"
+                padding: (30, 45)
+
+                MDLabel:
+                    text_size: self.size
+                    text: 'Początek snu'
+                    font_size: 16
+                    halign: 'left'
+                    valign: 'top'
+                    size: self.texture_size
+
+                MDTextField:
+                    id: sleep_begining
+                    size: (60, 20)
+                    helper_text: "Wpisz swoje imię"
+
+            AnchorLayout:
+                anchor_y: "top"
+                padding: (30, 90)
+
+                MDLabel:
+                    text_size: self.size
+                    text: 'Koniec snu:'
+                    font_size: 16
+                    halign: 'left'
+                    valign: 'top'
+                    size: self.texture_size
+
+                MDTextField:
+                    id: sleep_end
+                    size: (60, 20)
+                    helper_text: "Wpisz swoje imię"
+                
+            AnchorLayout:
+                anchor_y: 'top'
+                anchor_x: 'left'
+                padding: (30, 150)
+
+                Button:
+                    text: 'Zapisz godziny'
+                    size: (100, 35)
+                    size_hint: None, None
+                    valign: 'bottom'
+                    halign: 'left'
+                        
+
+
+
+
+
+        MDBottomNavigationItem:
+            name: 'screen 3'
+            text: 'Zegar biologiczny'
+
+            MDLabel:
+                text: 'JS'
+                halign: 'center'
